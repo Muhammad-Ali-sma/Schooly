@@ -1,0 +1,30 @@
+<div class="container">
+  <ul class="wrapper">
+    <h1>Daily</h1>
+    <li class="list-item">
+      <div class="box" (click)="handleOnTaskSelect.emit('daily')">
+        <p>Daily Work</p>
+      </div>
+      <i *ngIf="!hasCompletedDailyWork" class="fal fa-clock"></i>
+      <i *ngIf="hasCompletedDailyWork" class="far fa-check-double"></i>
+    </li>
+    <h1>Assignments</h1>
+    <li class="list-item">
+      <div class="box" (click)="handleOnTaskSelect.emit('spelling')">
+        <p>Spelling</p>
+      </div>
+      <i *ngIf="!hasCompletedSpellingAssignment" class="fal fa-clock"></i>
+      <i *ngIf="hasCompletedSpellingAssignment" class="far fa-check-double"></i>
+      <i class="fal fa-info-circle" (click)="handlePopup(true,'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ea laboriosam cum dolores enim temporibus soluta qui cupiditate tenetur autem placeat explicabo dolor nam repellendus, labore dignissimos aliquam quos nihil.')"></i>
+    </li>
+    <li class="list-item">
+      <div class="box" (click)="handleOnTaskSelect.emit('math')">
+        <p>Math</p>
+      </div>
+      <i *ngIf="!hasCompletedMathAssignment" class="fal fa-clock"></i>
+      <i *ngIf="hasCompletedMathAssignment" class="far fa-check-double"></i>
+      <i class="fal fa-info-circle" (click)="handlePopup(true,'Lorem ipsum dolor sit amet consectetur adipisicing elit.')"></i>
+    </li>
+  </ul>
+</div>
+<app-info-popup *ngIf="showPopup" [message]="message" (closePopup)="handlePopup(false,'')"></app-info-popup>

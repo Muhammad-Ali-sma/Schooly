@@ -1,0 +1,90 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.objects {
+  flex: 1 1 100%;
+  position: relative;
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: max-content;
+}
+
+.object {
+  position: fixed;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.object img {
+  width: 50px;
+}
+
+.answers .answer {
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.25em;
+  text-align: center;
+  display: flex;
+  border: 4px solid grey;
+  position: relative;
+  padding: 4px;
+  cursor: pointer;
+  margin: 0 0.25em 0.5em;
+}
+
+.answer img {
+  width: 100%;
+}
+
+.answers .answer .answer-text {
+  display: block;
+  margin: auto;
+  width: 100%;
+  font-size: 30px;
+  color: aqua;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.answer .answered-circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(30%, 30%);
+  display: flex;
+  z-index: 1000;
+}
+
+.answer .answered-circle img {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  -ms-user-drag: none;
+  user-drag: none;
+}

@@ -1,0 +1,154 @@
+.wrapper,
+.question {
+  display: flex;
+}
+
+.question {
+  flex-direction: row;
+  gap: 20px;
+}
+
+.wrapper {
+  flex-direction: column;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.pattern {
+  padding: 5px 0;
+  min-height: 200px;
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pattern-wrapper,
+.pattern-wrapper-answers {
+  height: 100%;
+}
+
+.pattern-row {
+  display: flex;
+}
+
+.pattern-cell,
+.pattern-cell-answers {
+  flex: 1;
+  border: 1px solid #333;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -1px;
+  padding: 10px;
+  /* cursor: pointer; */
+}
+
+.answers {
+  position: relative;
+  height: 300px;
+}
+
+.answer {
+  position: fixed;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.answer img {
+  /* width: 65px;
+  height: 65px; */
+  z-index: 999;
+  cursor: pointer;
+}
+
+.answer .answered-circle {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+
+.answer .answered-circle img {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.image img {
+  width: 200px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  -ms-user-drag: none;
+  user-drag: none;
+}
+
+@media (max-width: 900px) and (max-height: 400px) {
+  .pattern {
+    min-height: unset;
+  }
+}
+
+
+@media (max-width: 320px) {
+  /* .question {
+    flex-direction: column;
+  } */
+
+  .image img {
+    width: 120px;
+  }
+
+  .image,
+  .pattern {
+    flex: unset;
+    min-height: unset;
+  }
+
+
+  .image {
+    padding: 2px;
+  }
+
+  .answers {
+    position: relative;
+    height: 200px;
+  }
+
+}
+
+@media (min-width: 321px) and (max-width: 414px) {
+  /* .question {
+    flex-direction: column;
+  } */
+
+  .image,
+  .pattern {
+    flex: unset;
+    min-height: unset;
+  }
+
+  .image {
+    padding: 5px;
+  }
+
+  .image img {
+    width: 130px;
+  }
+
+  .answers {
+    position: relative;
+    height: 200px;
+  }
+}

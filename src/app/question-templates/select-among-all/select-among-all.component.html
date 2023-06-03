@@ -1,0 +1,83 @@
+<div class="rotate-warning {{skipRotation}}">
+  <img class="img-responsive" src="/assets/images/rotate-device.png" width="100" height="100" alt="Rotate Device">
+  <span class="fa fa-times close-icon" (click)="closeIcon()"></span>
+</div>
+<div class="wrapper">
+  <div class="question">
+    <div class="pattern">
+      <div
+        class="pattern-wrapper"
+      >
+        <div
+          class="pattern-row"
+          [ngStyle]="{ height: 100 / row.length + '%' }"
+          *ngFor="let row of question?.data?.leftPattern; let x = index"
+        >
+          <div
+            class="pattern-cell"
+            [attr.data-position]="[x, y]"
+            *ngFor="let cell of row; let y = index"
+          >
+            <img
+              [src]="question.data?.answers[cell]?.image"
+              [ngStyle]="{ height: answerImageSize + 'px',filter:question.data?.answers[cell]?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined }"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pattern">
+      <div
+        class="pattern-wrapper"
+      >
+        <div
+          class="pattern-row"
+          [ngStyle]="{ height: 100 / row.length + '%' }"
+          *ngFor="let row of question?.data?.rightPattern; let x = index"
+        >
+          <div
+            class="pattern-cell"
+            [attr.data-position]="[x, y]"
+            *ngFor="let cell of row; let y = index"
+          >
+            <div
+              *ngIf="cell === 'a'"
+              class="wildcard"
+              [ngStyle]="{ width: answerImageSize + 'px', height: answerImageSize + 'px' }"
+            ></div>
+            <img
+              *ngIf="cell !== 'a'"
+              [src]="question.data?.answers[question.data?.leftPattern[x][y]]?.image"
+              [ngStyle]="{ height: answerImageSize + 'px',filter:question.data?.answers[question.data?.leftPattern[x][y]]?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined }"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="answers">
+    <div *ngFor="let answer of question?.data?.answers; let i = index" (click)="selectAnswer(i)" class="answer" [ngClass]="answer?.selected === true ? 'answer selected' : 'answer'">
+      <img
+        [src]="answer?.image"
+        [ngStyle]="{
+          width: this.answerImageSize + 'px',
+          height: this.answerImageSize + 'px',
+          filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined
+        }"
+        alt=""
+      />
+      <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"
+      ><img
+        [ngStyle]="{'width': this.answerImageSize / 4 + 'px', 'height': this.answerImageSize / 4 + 'px'}"
+        src="{{
+          checkIfAnsweredCorrectly(answer)
+            ? '/assets/images/check.png'
+            : '/assets/images/cross-sign.png'
+        }}"
+        alt=""
+    /></span>
+    </div>
+  </div>
+</div>

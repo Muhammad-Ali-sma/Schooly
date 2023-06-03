@@ -1,0 +1,28 @@
+<div class="play-btn-container">
+  <h2 class="mood-h2">¿Cómo te sientes hoy?</h2>
+  <div class="mood-wrapper">
+    <div class="mood-screen-container">
+      <div class="mood-card" [ngClass]="{'mood-selected': mood === 'Happy'}"
+        (click)="selectMood.emit('Happy')"><img src="/assets/images/smiley_happy3.png" />
+        <small>Happy</small>
+      </div>
+      <div class="mood-card" [ngClass]="{'mood-selected': mood === 'Sad'}"
+        (click)="selectMood.emit('Sad')">
+        <img src="/assets/images/smiley_sad.png" /> <small>Sad</small>
+      </div>
+      <div class="mood-card" [ngClass]="{'mood-selected': mood === 'Anger'}"
+        (click)="selectMood.emit('Anger')"><img src="/assets/images/smiley_angry.png" />
+        <small>Anger</small>
+      </div>
+      <div class="mood-card" [ngClass]="{'mood-selected': mood === 'Nervous'}"
+        (click)="selectMood.emit('Nervous')"><img src="/assets/images/smiley_anguish2.png" />
+        <small>Nervous</small>
+      </div>
+      <div class="mood-card" [ngClass]="{'mood-selected': mood === 'Scared'}"
+        (click)="selectMood.emit('Scared')"><img src="/assets/images/smiley_grimacing.png" />
+        <small>Scared</small>
+      </div>
+    </div>
+  </div>
+  <i (click)="handleOnMoodStartClick.emit()" style="margin:0px;" class="fad fa-play play-btn"></i>
+</div>

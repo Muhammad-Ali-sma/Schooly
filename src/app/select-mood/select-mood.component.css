@@ -1,0 +1,100 @@
+.play-btn-container {
+  z-index: 999;
+  top: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-image: url('/assets/images/bg_init.png');
+  height: 100%;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.mood-h2 {
+  font-size: 4rem;
+  margin-top: 7vh;
+  color: #f79025;
+}
+
+.play-btn {
+  font-size: 4rem;
+  color: #f79025;
+  cursor: pointer;
+  margin-top: 30vh;
+  filter: drop-shadow(2px 4px 6px #f79025);
+  transition: 0.5s ease-in-out;
+}
+
+.play-btn:hover {
+  transform: rotate(360deg);
+}
+
+.mood-screen-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px 50px;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.mood-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 300px);
+}
+
+.mood-card {
+  background-color: white;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  font-size: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgb(151, 148, 148);
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.mood-card>small {
+  font-size: 20px;
+}
+
+.mood-card>img {
+  width: 75px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.mood-card:hover,
+.mood-card.active,
+.mood-card.mood-selected {
+  box-shadow: 0px 0px 10px #f79025;
+}
+
+
+@media screen and (max-width:425px) {
+  .mood-screen-container {
+    gap: 40px;
+  }
+  .mood-h2{
+    font-size: 2.5rem;
+    margin-top: 5vh;
+  }
+  .mood-card{
+    width: 130px;
+    height: 130px;
+  }
+  .mood-card>img{
+    width: 55px;
+  }
+  .mood-card>small{
+    font-size: 18px;
+  }
+}

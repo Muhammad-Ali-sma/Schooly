@@ -1,0 +1,37 @@
+.play-btn-container {
+  z-index: 999;
+  top: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-image: url('/assets/images/bg_init.png');
+  height: 100%;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.play-btn-container h2 {
+  font-size: 4rem;
+  margin-top: 7vh;
+  color: #f79025;
+}
+
+.play-btn {
+  font-size: 4rem;
+  color: #f79025;
+  cursor: pointer;
+  margin-top: 30vh;
+  filter: drop-shadow(2px 4px 6px #f79025);
+  transition: 0.5s ease-in-out;
+}
+
+.play-btn:hover {
+  transform: rotate(360deg);
+}
+
+.play-btn-container img {
+  width: 250px;
+  margin-top: 7vh;
+}

@@ -1,0 +1,926 @@
+[
+  {
+    "id": 1,
+    "type": "spelling",
+    "text": "Escribe lo que escuches",
+    "data": {
+      "questionTextAudio": "https://schooly.site/assets/audio/q_cs.mp3",
+      "spellingIntroAudio": "https://schooly.site/assets/audio/q_cs.mp3",
+      "phrase_correct": "There is a chair.",
+      "keyboard_config": {
+        "default": [
+          "` 1 2 3 4 5 6 7 8 9 0 - = {bksp}",
+          "{tab} q w e r t y u i o p [ ] \\",
+          "{lock} a s d f g h j k l ; ' {enter}",
+          "{shift} z x c v b n m , . / {shift}",
+          ".com @ {space}"
+        ],
+        "shift": [
+          "~ ! @ # $ % ^ &amp; * ( ) _ + {bksp}",
+          "{tab} Q W E R T Y U I O P { } |",
+          "{lock} A S D F G H J K L : ' {enter}",
+          "{shift} Z X C V B N M &lt; &gt; ? {shift}",
+          ".com @ {space}"
+        ]
+      },
+      "help_underscores": true,
+      "disordered_keyboard": true,
+      "extra_secs_to_wait": 5
+    }
+  },
+  {
+    "id": 2,
+    "type": "spelling",
+    "text": "Escribe lo que escuches",
+    "data": {
+      "questionTextAudio": "https://schooly.site/assets/audio/q_cs.mp3",
+      "spellingIntroAudio": "https://schooly.site/assets/audio/q_cs.mp3",
+      "phrase_correct": "There is a boy.",
+      "keyboard_config": {
+        "default": [
+          "` 1 2 3 4 5 6 7 8 9 0 - = {bksp}",
+          "{tab} q w e r t y u i o p [ ] \\",
+          "{lock} a s d f g h j k l ; ' {enter}",
+          "{shift} z x c v b n m , . / {shift}",
+          ".com @ {space}"
+        ],
+        "shift": [
+          "~ ! @ # $ % ^ &amp; * ( ) _ + {bksp}",
+          "{tab} Q W E R T Y U I O P { } |",
+          "{lock} A S D F G H J K L : ' {enter}",
+          "{shift} Z X C V B N M &lt; &gt; ? {shift}",
+          ".com @ {space}"
+        ]
+      },
+      "help_underscores": true,
+      "disordered_keyboard": true,
+      "extra_secs_to_wait": 5
+    }
+  },
+  {
+    "id": 3,
+    "text": "¿Cual tiene más?",
+    "type": "multiple-choice-text-or-image-select-random",
+    "data": {
+      "objects": {
+        "outside": [
+          {
+            "image": "http://schooly.site/assets/images/lettuce.png"
+          },
+          {
+            "image": "http://schooly.site/assets/images/apple.png"
+          },
+          {
+            "image": "http://schooly.site/assets/images/cat.png"
+          },
+          {
+            "image": "http://schooly.site/assets/images/garlic.png"
+          }
+        ]
+      },
+      "answers": [
+        {
+          "id": 1,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/bottle_l.png",
+          "correct": true,
+          "selectable": true,
+          "audio": ""
+        },
+        {
+          "id": 2,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/bottle_m.png",
+          "correct": true,
+          "selectable": false,
+          "audio": ""
+        },
+        {
+          "id": 2,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/bottle_m.png",
+          "correct": true,
+          "selectable": false,
+          "audio": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "text": "Selecciona el animal",
+    "type": "multiple-choice-tag-select",
+    "data": {
+      "image": "",
+      "questionTextAudio": "https://schooly.site/assets/audio/q_sa.mp3",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Some answer 1",
+          "image": "http://schooly.site/assets/images/apple.png",
+          "correct": false,
+          "side": "left"
+        },
+        {
+          "id": 2,
+          "text": "Some answer 2",
+          "image": "http://schooly.site/assets/images/mushroom.png",
+          "correct": false,
+          "side": "left"
+        },
+        {
+          "id": 3,
+          "text": "Some answer 3",
+          "image": "http://schooly.site/assets/images/watermelon.png",
+          "correct": false,
+          "side": "left"
+        },
+        {
+          "id": 4,
+          "text": "Some answer 4",
+          "image": "http://schooly.site/assets/images/cat.png",
+          "correct": true,
+          "side": "right"
+        },
+        {
+          "id": 5,
+          "text": "Some answer 5",
+          "image": "http://schooly.site/assets/images/jellyfish.png",
+          "correct": true,
+          "side": "right"
+        },
+        {
+          "id": 6,
+          "text": "Some answer 6",
+          "image": "http://schooly.site/assets/images/garlic.png",
+          "correct": false,
+          "side": "right"
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "text": "Seleccina el fruto seco",
+    "type": "multiple-choice-tag-select",
+    "data": {
+      "image": "",
+      "questionTextAudio": "https://schooly.site/assets/audio/q_sfs.mp3",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Some answer 1",
+          "image": "http://schooly.site/assets/images/zucchini.png",
+          "correct": false,
+          "side": "left"
+        },
+        {
+          "id": 2,
+          "text": "Some answer 2",
+          "image": "http://schooly.site/assets/images/chestnut.png",
+          "correct": true,
+          "side": "left"
+        },
+        {
+          "id": 3,
+          "text": "Some answer 3",
+          "image": "http://schooly.site/assets/images/lion.png",
+          "correct": false,
+          "side": "left"
+        },
+        {
+          "id": 4,
+          "text": "Some answer 4",
+          "image": "http://schooly.site/assets/images/eagle.png",
+          "correct": false,
+          "side": "left"
+        },
+        {
+          "id": 5,
+          "text": "Some answer 5",
+          "image": "http://schooly.site/assets/images/almond.png",
+          "correct": true,
+          "side": "right"
+        },
+        {
+          "id": 6,
+          "text": "Some answer 6",
+          "image": "http://schooly.site/assets/images/turtle.png",
+          "correct": false,
+          "side": "right"
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "text": "Dibuja el patron",
+    "type": "repeat-pattern",
+    "data": {
+      "image": "https://schooly.site/assets/images/pattern_level0_3.JPG",
+      "imageSize": "small",
+      "questionTextAudio": "https://schooly.site/assets/audio/q_dp.mp3",
+      "colors": [
+        "#DB1F48",
+        "#004369",
+        "#E5DDC8"
+      ],
+      "pattern": [
+        [
+          0,
+          1
+        ],
+        [
+          null,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "text": "Mete dentro del circulo lo indicado en la etiqueta",
+    "type": "drag-and-drop-into-container",
+    "questionTextAudio": "https://schooly.site/assets/audio/q_ce.mp3",
+    "data": {
+      "image": "https://schooly.site/assets/images/dog3.png",
+      "answers": [
+        {
+          "id": 1,
+          "image": "https://schooly.site/assets/images/dog.png",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "image": "http://schooly.site/assets/images/pineapple.png",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "image": "http://schooly.site/assets/images/snail.png",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "image": "http://schooly.site/assets/images/dog2.png",
+          "correct": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "text": "Mete dentro del circulo lo indicado en la etiqueta",
+    "type": "drag-and-drop-into-container",
+    "questionTextAudio": "https://schooly.site/assets/audio/q_ce.mp3",
+    "data": {
+      "image": "https://schooly.site/assets/images/bird4.png",
+      "answers": [
+        {
+          "id": 1,
+          "image": "https://schooly.site/assets/images/lettuce.png",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "image": "http://schooly.site/assets/images/bird2.png",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "image": "http://schooly.site/assets/images/bird3.png",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "image": "http://schooly.site/assets/images/dog2.png",
+          "correct": false
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "text": "¿Cual tiene más?",
+    "type": "multiple-choice-text-or-image-select-random",
+    "data": {
+      "objects": {
+        "outside": [
+          {
+            "image": "http://schooly.site/assets/images/lettuce.png"
+          },
+          {
+            "image": "http://schooly.site/assets/images/apple.png"
+          },
+          {
+            "image": "http://schooly.site/assets/images/cat.png"
+          },
+          {
+            "image": "http://schooly.site/assets/images/garlic.png"
+          }
+        ]
+      },
+      "answers": [
+        {
+          "id": 1,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/cap.png",
+          "correct": true,
+          "selectable": true,
+          "audio": ""
+        },
+        {
+          "id": 2,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/flute.png",
+          "correct": true,
+          "selectable": false,
+          "audio": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "text": "Draw the pattern",
+    "type": "repeat-pattern",
+    "data": {
+      "image": "https://schooly.site/assets/images/pattern_level0_17.JPG",
+      "questionTextAudio": "https://schooly.site/assets/audio/p0.mp3",
+      "colors": [
+        "#DB1F48",
+        "#004369",
+        "#E5DDC8"
+      ],
+      "pattern": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          null,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          null,
+          2,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "text": "Draw the pattern",
+    "type": "repeat-pattern",
+    "data": {
+      "image": "https://schooly.site/assets/images/pattern_level0_5.JPG",
+      "questionTextAudio": "https://schooly.site/assets/audio/p0.mp3",
+      "colors": [
+        "#DB1F48",
+        "#004369",
+        "#E5DDC8"
+      ],
+      "pattern": [
+        [
+          0,
+          null,
+          0
+        ],
+        [
+          2,
+          0,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "text": "Cual tiene más?",
+    "type": "multiple-choice-text-or-image-select",
+    "data": {
+      "image": "",
+      "imageSize": "",
+      "questionTextAudio": "https://schooly.site/assets/audio/q_tm.mp3",
+      "shuffleAnswers": true,
+      "answers": [
+        {
+          "id": 1,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/bottle_l.png",
+          "correct": false,
+          "selectable": true,
+          "audio": ""
+        },
+        {
+          "id": 2,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/bottle_m.png",
+          "correct": true,
+          "selectable": false,
+          "audio": "3"
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "text": "Cual tiene más?",
+    "type": "multiple-choice-text-or-image-select",
+    "data": {
+      "image": "",
+      "imageSize": "",
+      "questionTextAudio": "https://schooly.site/assets/audio/q_tm.mp3",
+      "shuffleAnswers": true,
+      "answers": [
+        {
+          "id": 1,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/bottle_l.png",
+          "correct": false,
+          "selectable": true,
+          "audio": ""
+        },
+        {
+          "id": 2,
+          "type": "image",
+          "content": "https://schooly.site/assets/images/bottle_m.png",
+          "correct": true,
+          "selectable": false,
+          "audio": "3"
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "text": "question text",
+    "type": "select-among-all",
+    "data": {
+      "leftPattern": [
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "rightPattern": [
+        [
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "a"
+        ]
+      ],
+      "answers": [
+        {
+          "id": 0,
+          "image": "https://schooly.site/assets/images/lettuce.png"
+        },
+        {
+          "id": 1,
+          "image": "http://schooly.site/assets/images/pineapple.png"
+        },
+        {
+          "id": 2,
+          "image": "http://schooly.site/assets/images/bird3.png"
+        },
+        {
+          "id": 3,
+          "image": "http://schooly.site/assets/images/dog2.png"
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "text": "question text",
+    "type": "select-among-all",
+    "data": {
+      "image": "/assets/images/dummy-question-image.png",
+      "leftPattern": [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "rightPattern": [
+        [
+          "a",
+          "k"
+        ],
+        [
+          "k",
+          "a"
+        ]
+      ],
+      "answers": [
+        {
+          "id": 1,
+          "image": "https://schooly.site/assets/images/lettuce.png"
+        },
+        {
+          "id": 2,
+          "image": "http://schooly.site/assets/images/pineapple.png"
+        },
+        {
+          "id": 3,
+          "image": "http://schooly.site/assets/images/bird3.png"
+        },
+        {
+          "id": 4,
+          "image": "http://schooly.site/assets/images/dog2.png"
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "text": "coloca las imágenes en su posicion",
+    "type": "drag-and-drop-repeat-pattern",
+    "data": {
+      "leftPattern": [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "rightPattern": [
+        [
+          "a",
+          "a"
+        ],
+        [
+          "n",
+          "a"
+        ]
+      ],
+      "answers": [
+        {
+          "id": 0,
+          "image": "https://schooly.site/assets/images/lettuce.png"
+        },
+        {
+          "id": 1,
+          "image": "http://schooly.site/assets/images/pineapple.png"
+        },
+        {
+          "id": 2,
+          "image": "http://schooly.site/assets/images/bird3.png"
+        },
+        {
+          "id": 3,
+          "image": "http://schooly.site/assets/images/dog2.png"
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "text": "coloca las imágenes en su posicion",
+    "type": "drag-and-drop-repeat-pattern",
+    "data": {
+      "image": "/assets/images/dummy-question-2.png",
+      "leftPattern": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ]
+      ],
+      "rightPattern": [
+        [
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "a",
+          "k"
+        ]
+      ],
+      "answers": [
+        {
+          "id": 1,
+          "image": "https://schooly.site/assets/images/dog2.png"
+        },
+        {
+          "id": 2,
+          "image": "https://schooly.site/assets/images/lettuce.png"
+        },
+        {
+          "id": 1,
+          "image": "http://schooly.site/assets/images/pineapple.png"
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "text": "coloca las imágenes en su posicion",
+    "type": "drag-and-drop-repeat-pattern",
+    "data": {
+      "leftPattern": [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "rightPattern": [
+        [
+          "a",
+          "a"
+        ],
+        [
+          "a",
+          "k"
+        ]
+      ],
+      "answers": [
+        {
+          "id": 0,
+          "image": "https://schooly.site/assets/images/lettuce.png"
+        },
+        {
+          "id": 1,
+          "image": "http://schooly.site/assets/images/pineapple.png"
+        },
+        {
+          "id": 2,
+          "image": "http://schooly.site/assets/images/bird3.png"
+        },
+        {
+          "id": 3,
+          "image": "http://schooly.site/assets/images/dog2.png"
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "text": "coloca las imágenes en su posicion",
+    "type": "drag-and-drop-repeat-pattern",
+    "data": {
+      "leftPattern": [
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          1,
+          0,
+          4,
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      ],
+      "rightPattern": [
+        [
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "a",
+          "a",
+          "k",
+          "a",
+          "a",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k"
+        ],
+        [
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k",
+          "k"
+        ]
+      ],
+      "answers": [
+        {
+          "id": 1,
+          "image": "https://schooly.site/assets/images/lettuce.png"
+        },
+        {
+          "id": 2,
+          "image": "http://schooly.site/assets/images/pineapple.png"
+        },
+        {
+          "id": 3,
+          "image": "http://schooly.site/assets/images/bird3.png"
+        },
+        {
+          "id": 4,
+          "image": "http://schooly.site/assets/images/dog2.png"
+        },
+        {
+          "id": 5,
+          "image": "http://schooly.site/assets/images/dog.png"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,17 @@
+<div class="finish-quiz-wrapper">
+  <div class="main_inner__loading">
+    <div class="bg">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_sunburst.png">
+    </div>
+  </div>
+  <div class="result-wrapper">
+    <h2 class="quiz-finished-text">'Tiempo!! Se terminó el juego por hoy!</h2>
+    <p *ngIf="haveOneMoreChance">¿Quieres corregir tus fallos y ganar puntos extra?</p>
+    <br />
+    <br />
+    <div class="btn-container">
+      <button class="restart-quiz" (click)="handleOnNoBtnClick.emit()">{{ haveOneMoreChance ? "No" : "OK" }}</button>
+      <button *ngIf="haveOneMoreChance" class="restart-quiz oneMoreChance" (click)="oneMoreChance.emit()">Yes</button>
+    </div>
+  </div>
+</div>

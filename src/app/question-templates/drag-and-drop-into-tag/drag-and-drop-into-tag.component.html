@@ -1,0 +1,29 @@
+<div class="question">
+    <div class="container">
+        <div id="tag-image" class="tag-image">
+            <img class="tag-image-background" src="https://www.smartickmethod.com/images/visualizadores/clasificacion/conjuntos/etiqueta_der.png" alt="">
+        </div>
+        <div class="container-box" id="container-box">
+            <ul class="objects inside-objects">
+                <li class="object" *ngFor="let object of question?.data?.objects?.inside" [ngStyle]="{'top': object?.y + 'px', 'left': object?.x + 'px'}">
+                    <img src="{{object?.image}}" [ngStyle]="{filter:object?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="objects">
+        <ul class="objects outside-objects" style="min-height: 200px;">
+            <li class="object" *ngFor="let object of question?.data?.objects?.outside" [ngStyle]="{'top': object?.y + 'px', 'left': object?.x + 'px'}">
+                <img src="{{object?.image}}" [ngStyle]="{filter:object?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" alt="">
+            </li>
+        </ul>
+        <ul class="answers">
+            <li class="answer" *ngFor="let answer of question?.data?.answers" cdkDrag [cdkDragData]="answer" (cdkDragReleased)="drop($event)">
+                <img class="tag-image-background" src="{{answer?.selected ? '/assets/images/tag-selected.png' : '/assets/images/tag.png'}}" alt="">
+                <img class="tag-image" [ngStyle]="{filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" src="{{answer?.image}}" alt="">
+                <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"><img src="{{ checkIfAnsweredCorrectly(answer) ? '/assets/images/check.png' : '/assets/images/cross-sign.png' }}" alt=""></span>
+            </li>
+        </ul>
+    </div>
+
+</div>

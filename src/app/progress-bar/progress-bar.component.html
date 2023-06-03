@@ -1,0 +1,10 @@
+<div class="progressbar-container">
+  <div class="progress-container">
+    <div class="progress-bar" [style.width]="progress+'%'" id="myBar"></div>
+  </div>
+  <div class="stars">
+    <span [class]="iconName" [style]="progress >= 18?'color:#FABE2C':'color:#2d3745'"></span>
+    <span [class]="iconName" [style]="progress >= 51?'color:#FABE2C':'color:#2d3745'"></span>
+    <span [class]="iconName" [style]="progress >= 84?'color:#FABE2C':'color:#2d3745'"></span>
+  </div>
+</div>

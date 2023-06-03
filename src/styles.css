@@ -1,0 +1,78 @@
+@import 'simple-keyboard/build/css/index.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background: url('/assets/images/background_pattern.png');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow: hidden;
+}
+
+:not(:root):fullscreen::backdrop {
+  background: url('/assets/images/background_pattern.png');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+
+  .score-wrapper .score-wrap .score-obj {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .score-wrapper .score-wrap .score-obj b {
+    font-size: 17px;
+  }
+
+}
+
+@media (max-width: 425px) {
+  .score-wrap {
+    gap: 8px !important;
+  }
+
+  .score-wrapper .score-wrap .score-obj,
+  .score-wrapper .score-wrap .score-obj b {
+    font-size: 14px;
+    display: flex;
+    gap: 5px;
+  }
+
+}
+
+.rotate-warning {
+  display: none;
+}
+
+.rotate-warning .close-icon {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 30px;
+}
+
+@media (orientation: portrait) and (max-width: 600px) {
+  .rotate-warning:not(.skip-rotate) {
+    display: flex;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.572);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999999;
+  }
+}

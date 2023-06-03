@@ -1,0 +1,16 @@
+<div class="modal-backdrop">
+  <div class="modal-body" id="appreciation-modal">
+    <img [src]="'/assets/images/points'+continuousCorrectAnswer+'.png'" alt="" />
+    <h1 id="animation">Guau!!! 10 aciertos seguidos! Muy bien!</h1>
+    <div class="modal-action">
+      <button
+        class="modal-action-button"
+        type="button"
+        (click)="cancel.emit(true)"
+      >
+        <h1>Sigue así!</h1>
+      </button>
+    </div>
+  </div>
+</div>
+

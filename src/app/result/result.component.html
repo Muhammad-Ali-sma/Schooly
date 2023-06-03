@@ -1,0 +1,18 @@
+<div class="question-wrapper">
+  <div class="star-container" *ngIf="!showSummaryPoints">
+    <span [class]="progress >= 18 ? iconName + ' active' : iconName "></span>
+    <span [class]="progress >= 51 ? iconName + ' active' : iconName "></span>
+    <span [class]="progress >= 84 ? iconName + ' active' : iconName "></span>
+  </div>
+  <div class="summary-container" *ngIf="showSummaryPoints">
+    <span [class]="progress >= 18 ? 'fas fa-check' + ' active' : 'fas fa-check'"></span>
+    <span [class]="progress >= 51 ? 'fas fa-check' + ' active' : 'fas fa-check'"></span>
+    <span [class]="progress >= 84 ? 'fas fa-check' + ' active' : 'fas fa-check'"></span>
+  </div>
+  <h2 class="quiz-finished-text">Finished</h2>
+  <h2 class="quiz-finished-text">Time elapsed: {{ runningTimer }}</h2>
+  <img class="water_gif" src="/assets/images/water.gif" alt="" />
+  <br />
+  <br />
+  <button class="restart-quiz" (click)="restartQuiz.emit()"> Restart </button>
+</div>

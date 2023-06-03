@@ -1,0 +1,12 @@
+<div class="rotate-warning {{skipRotation}}">
+    <img class="img-responsive" src="/assets/images/rotate-device.png" width="100" height="100" alt="Rotate Device">
+    <span class="fa fa-times close-icon" (click)="closeIcon()"></span>
+</div>
+<div class="question">
+    <div class="image" *ngIf="question?.data?.image && question?.data?.image !== ''">
+        <img src="{{question.data?.image}}" [ngStyle]="{filter:question.data?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" alt="" [style.width]="getImageSize()">
+    </div>
+    <div class="images">
+        <img *ngFor="let image of question?.data?.images" class="image" src="{{ image?.image }}" alt="" [ngStyle]="{'width': getResponsiveImageSize(image?.size), 'max-width': image?.size + 'px', filter:image?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}">
+    </div>
+</div>

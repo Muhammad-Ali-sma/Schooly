@@ -1,0 +1,24 @@
+<div class="question">
+    <div class="left">
+        <ul class="answers">
+            <li class="answer" *ngFor="let answer of getLeftQuestions" (click)="selectAnswer(answer)">
+                <img class="tag-image" src="{{answer?.selected ? '/assets/images/tag-selected.png' : '/assets/images/tag.png'}}" alt="">
+                <img class="answer-image" [ngStyle]="{filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" src="{{answer?.image}}" alt="">
+                <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"><img src="{{ checkIfAnsweredCorrectly(answer) ? '/assets/images/check.png' : '/assets/images/cross-sign.png' }}" alt=""></span>
+            </li>
+        </ul>
+    </div>
+    <div class="image">
+        <img src="{{question.data?.image}}" alt="" [style.width]="getImageSize()">
+    </div>
+    <div class="right">
+        <ul>
+            <li class="answer" *ngFor="let answer of getRightQuestions" (click)="selectAnswer(answer)">
+                <img class="tag-image" src="{{answer?.selected ? '/assets/images/tag-selected.png' : '/assets/images/tag.png'}}" alt="">
+                <img *ngIf="!answer?.text" [ngStyle]="{filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" class="answer-image" src="{{answer?.image}}" alt="">
+                <span *ngIf="answer?.text" class="answer-image">{{answer?.text}}</span>
+                <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"><img src="{{ checkIfAnsweredCorrectly(answer) ? '/assets/images/check.png' : '/assets/images/cross-sign.png' }}" alt=""></span>
+            </li>
+        </ul>
+    </div>
+</div>

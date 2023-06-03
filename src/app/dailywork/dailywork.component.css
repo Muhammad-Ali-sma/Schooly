@@ -1,0 +1,130 @@
+.container {
+  z-index: 999;
+  top: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: url('/assets/images/bg_init.png');
+  height: 100%;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper {
+  margin-left: 20vw;
+  list-style: circle;
+}
+
+.wrapper>h1 {
+  text-transform: uppercase;
+  color: #f79025;
+  font-size: 3rem;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.list-item i {
+  font-size: 3rem;
+  margin-top: 24px;
+  color: #f79025;
+}
+
+.box {
+  border: 2px solid #f79025;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.box:hover {
+  background: #f79025;
+  color: #fff;
+}
+
+.box>p {
+  font-size: 1.5rem;
+}
+
+.info-message {
+  position: absolute;
+  background: #fff;
+  max-width: 400px;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 3px black;
+  top: -145px;
+  left: 24rem;
+  /* display: none; */
+}
+
+
+.fal.fa-info-circle:hover+.info-message {
+  display: block;
+}
+
+.list-item .fa-check-double {
+  color: green;
+}
+
+@media (max-width:673px) {
+  .wrapper {
+    margin-left: 0;
+    align-self: center;
+  }
+}
+
+@media (max-width:460px) {
+  .wrapper>h1 {
+    font-size: 2.5rem;
+  }
+
+  .box {
+    width: 200px;
+  }
+
+  .box>p {
+    font-size: 1.2rem;
+  }
+
+  .list-item i {
+    font-size: 2.5rem;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width:325px) {
+  .wrapper>h1 {
+    font-size: 1.7rem;
+  }
+
+  .box {
+    width: 160px;
+  }
+
+  .box>p {
+    font-size: 1.2rem;
+  }
+
+  .list-item {
+    gap: 10px;
+  }
+
+  .list-item i {
+    font-size: 1.7rem;
+    margin-top: 19px;
+  }
+}

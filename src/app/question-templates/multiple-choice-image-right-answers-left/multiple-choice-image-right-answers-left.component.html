@@ -1,0 +1,14 @@
+<div class="question">
+    <div class="left">
+        <ul class="answers" [style.width]="question.data?.answers?.length > 4 ? '400px' : '250px'">
+            <li class="answer" *ngFor="let answer of question?.data?.answers" [style.border-color]="answer?.selected ? 'orange': 'grey'" (click)="selectAnswer(answer)">
+                <span class="answer-text" *ngIf="answer?.type === 'text'">{{answer?.content}}</span>
+                <img *ngIf="answer?.type === 'image'" [ngStyle]="{filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" src="{{answer?.content}}" alt="">
+                <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"><img src="{{ checkIfAnsweredCorrectly(answer) ? '/assets/images/check.png' : '/assets/images/cross-sign.png' }}" alt=""></span>
+            </li>
+        </ul>
+    </div>
+    <div class="right">
+        <img src="{{question.data?.image}}" [ngStyle]="{filter:question.data?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" alt="" [style.width]="getImageSize()">
+    </div>
+</div>

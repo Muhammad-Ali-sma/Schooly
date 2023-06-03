@@ -1,0 +1,104 @@
+<span *ngIf="page > 3" [style]="page <= 3  ? 'position:relative;z-index:-1':'position:relative'">
+  <div class="header">
+    <app-progress-timer [value]="runningTimer"></app-progress-timer>
+    <div class="progressbar-wrapper">
+      <app-progress-bar [iconName]="iconName" [progress]="progress"></app-progress-bar>
+    </div>
+
+    <img class="current_stage" [src]="'/assets/images/stage'+userData.currentStage+'_loop.gif'" />
+    <button [disabled]="disableToggleScreenBtn" (click)="openFullScreen()"
+      [class]="isFullScreenOpen?'custombtn fullscreen-button smallscreen-button':'custombtn fullscreen-button'"
+      type="button">
+      <i class="far fa-expand-wide"></i>
+    </button>
+  </div>
+  <div class="score-wrapper" *ngIf="!hideScoreBar">
+    <div class="question-text">
+      <h1 [class.isPlaying]="questionTextAudioPlaying" title="{{ finished ? 'Finished!' : currentQuestion.text || '' }}"
+        (click)="playQuestionAudio(currentQuestion)">
+        <img [attr.data-playing]="questionTextAudioPlaying" src="/assets/images/speaker.png" alt="" />
+        <span>{{ finished ? "Finished!" : currentQuestion.text || "" }}</span>
+      </h1>
+    </div>
+    <div class="score-wrap">
+      <div class="score-obj"><b>ID:</b> {{currentQuestion.postId || currentQuestion.id || ""}}</div>
+      <div class="score-obj"><b>Total:</b> {{answered}}/{{questions.length || "0"}}</div>
+      <div class="score-obj"><b>Correct:</b> {{((correctAnswered/(questions.length || 1))*100).toFixed(0)}}%</div>
+      <div class="score-obj"><b>Mode:</b> {{difficultyMode}}</div>
+      <button (click)="handleIconModal(true)" class="custombtn settingsbtn" type="button">
+        <i class="far fa-cog"></i>
+      </button>
+      <button (click)="handleLogoutModal(true)" class="custombtn settingsbtn" type="button">
+        <i class="far fa-sign-out-alt"></i>
+      </button>
+    </div>
+  </div>
+  <div class="quiz">
+    <div class="question-wrapper" *ngIf="!finished && !showResult">
+      <app-multiple-choice-tag-select *ngIf="currentQuestion?.type === 'multiple-choice-tag-select'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-multiple-choice-tag-select>
+      <app-drag-and-drop-into-container *ngIf="currentQuestion?.type === 'drag-and-drop-into-container'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-drag-and-drop-into-container>
+      <app-multiple-choice-text-or-image-select-random
+        *ngIf="currentQuestion?.type === 'multiple-choice-text-or-image-select-random'" [question]="currentQuestion"
+        [questionVerified]="questionVerified"></app-multiple-choice-text-or-image-select-random>
+      <app-drag-and-drop-into-tag *ngIf="currentQuestion?.type === 'drag-and-drop-into-tag'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-drag-and-drop-into-tag>
+      <app-multiple-choice-text-or-image-select *ngIf="currentQuestion?.type === 'multiple-choice-text-or-image-select'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-multiple-choice-text-or-image-select>
+      <app-multiple-choice-vertical-answers *ngIf="currentQuestion?.type === 'multiple-choice-vertical-answers'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-multiple-choice-vertical-answers>
+      <app-multiple-choice-image-left-answers-right
+        *ngIf="currentQuestion?.type === 'multiple-choice-image-left-answers-right'" [question]="currentQuestion"
+        [questionVerified]="questionVerified"></app-multiple-choice-image-left-answers-right>
+      <app-multiple-choice-image-right-answers-left
+        *ngIf="currentQuestion?.type === 'multiple-choice-image-right-answers-left'" [question]="currentQuestion"
+        [questionVerified]="questionVerified"></app-multiple-choice-image-right-answers-left>
+      <app-repeat-pattern *ngIf="currentQuestion?.type === 'repeat-pattern'" [question]="currentQuestion"
+        [questionVerified]="questionVerified"></app-repeat-pattern>
+      <app-drag-and-drop-repeat-pattern *ngIf="currentQuestion?.type === 'drag-and-drop-repeat-pattern'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-drag-and-drop-repeat-pattern>
+      <app-select-among-all *ngIf="currentQuestion?.type === 'select-among-all'" [question]="currentQuestion"
+        [questionVerified]="questionVerified"></app-select-among-all>
+      <app-video-and-audio *ngIf="currentQuestion?.type === 'video-and-audio'" [question]="currentQuestion"
+        [questionVerified]="questionVerified"></app-video-and-audio>
+      <app-order-images-horizontally *ngIf="currentQuestion?.type === 'order-images-horizontally'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-order-images-horizontally>
+      <app-select-coordinates-on-image *ngIf="currentQuestion?.type === 'select-coordinates-on-image'"
+        [question]="currentQuestion" [questionVerified]="questionVerified"></app-select-coordinates-on-image>
+      <app-spelling *ngIf="currentQuestion?.type === 'spelling'" [question]="currentQuestion"
+        [questionVerified]="questionVerified"></app-spelling>
+    </div>
+    <button *ngIf="!finished && !showResult" class="verify-question-button" [disabled]="!waitForAnswerToConfirm"
+      type="button" (click)="answerCheck()">
+      <img src="/assets/images/paper-plane.png" alt="" />
+    </button>
+
+    <app-quiz-end [haveOneMoreChance]="haveOneMoreChance" *ngIf="finished" (oneMoreChance)="oneMoreChance()"
+      (handleOnNoBtnClick)="handleOnNoBtnClick()"></app-quiz-end>
+
+    <app-result [showSummaryPoints]="showSummaryPoints" *ngIf="showResult" (restartQuiz)="restartQuiz()"
+      [runningTimer]="runningTimer" [iconName]="iconName" [progress]="progress"></app-result>
+  </div>
+</span>
+
+<app-start-quiz *ngIf="page === 1 ? true : false" (handleOnPlayBtnClick)="handleOnPlayBtnClick()"></app-start-quiz>
+
+<app-select-mood *ngIf="page === 2 ? true : false" [mood]="mood" (handleOnMoodStartClick)="handleOnMoodStartClick()"
+  (selectMood)="selectMood($event)"></app-select-mood>
+
+<app-dailywork *ngIf="page === 3 ? true : false" [hasCompletedDailyWork]="hasCompletedDailyWork"
+  [hasCompletedMathAssignment]="hasCompletedMathAssignment"
+  [hasCompletedSpellingAssignment]="hasCompletedSpellingAssignment" (handleOnTaskSelect)="handleOnTaskSelect($event)">
+</app-dailywork>
+
+<app-confirm-modal *ngIf="showConfirmModal" (cancel)="closeModal()" (submit)="verifyQuestion()"></app-confirm-modal>
+
+<app-apprecitaion-modal [continuousCorrectAnswer]="isContinuousCorrectAnswer" *ngIf="appreciationModal"
+  (cancel)="closeAppreciationModal()"></app-apprecitaion-modal>
+
+<app-icon-modal *ngIf="showIconModal" (cancel)="handleIconModal(false)" [selectedIcon]="iconName"
+  (submit)="changeIcon($event)"></app-icon-modal>
+
+<app-logout-confirmation-modal *ngIf="logoutModal" (cancel)="handleLogoutModal(false)"
+  (submit)="handleLogoutModal(false)"></app-logout-confirmation-modal>

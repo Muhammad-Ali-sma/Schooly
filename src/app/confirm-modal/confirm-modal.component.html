@@ -1,0 +1,23 @@
+<div class="modal-backdrop">
+  <div class="modal-body">
+    <h1>Aún no has elegido una respuesta. ¿Está seguro?</h1>
+    <div class="modal-action">
+      <button
+        class="modal-action-button"
+        type="button"
+        (click)="cancel.emit(true)"
+      >
+        <img src="/assets/images/back-arrow.png" alt="" />
+        <h1>No</h1>
+      </button>
+      <button
+        class="modal-action-button"
+        type="button"
+        (click)="submit.emit(true)"
+      >
+        <img src="/assets/images/paper-plane.png" alt="" />
+        <h1>Sí</h1>
+      </button>
+    </div>
+  </div>
+</div>

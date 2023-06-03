@@ -1,0 +1,16 @@
+<div class="question">
+    <div class="container">
+        <div class="tag-image">
+            <img class="tag-image-background" src="https://www.smartickmethod.com/images/visualizadores/clasificacion/conjuntos/etiqueta_der.png" alt="">
+            <img class="tag-image-data" src="{{question.data?.image}}" [ngStyle]="{filter:question.data?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" alt="">
+        </div>
+        <div class="container-box" id="container-box"></div>
+    </div>
+    <ul class="answers">
+        <li class="answer" *ngFor="let answer of question?.data?.answers" [ngClass]="{'answer-selected': answer?.selected}"
+            [ngStyle]="{'top': answer?.y + 'px', 'left': answer?.x + 'px'}" cdkDrag [cdkDragBoundary]="parentElement" [cdkDragData]="answer" (cdkDragReleased)="drop($event)" [cdkDragFreeDragPosition]="answer.dragPosition">
+            <img src="{{answer?.image}}" [ngStyle]="{filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" alt="">
+            <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"><img src="{{ checkIfAnsweredCorrectly(answer) ? '/assets/images/check.png' : '/assets/images/cross-sign.png' }}" alt=""></span>
+        </li>
+    </ul>
+</div>

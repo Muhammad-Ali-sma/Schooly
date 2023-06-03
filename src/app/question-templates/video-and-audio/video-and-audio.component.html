@@ -1,0 +1,18 @@
+<div class="question">
+    <div class="question-video">
+        <video src="{{ question.data?.video }}" id="video"></video>
+        <img *ngIf="!videoStarted" type="button" (click)="playVideo()" src="/assets/images/play-button.png" alt="">
+    </div>
+    <div class="question-details" [style.opacity]="videoFinished ? '1' : '0.5'" [style.pointer-events]="videoFinished ? 'all' : 'none'">
+        <div class="question-audio">
+            <img [attr.data-playing]="audioPlaying" [ngStyle]="{filter:question.data?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined }" *ngIf="question?.data?.audio && question?.data?.audio !== ''" src="/assets/images/speaker.png" alt="" (click)="playAudio()">
+            <span>{{ question.data.audioText }}</span>
+        </div>
+        <div class="answers">
+            <div class="answer" *ngFor="let answer of question?.data?.answers" [style.border-color]="answer?.selected ? 'orange': 'transparent'" (click)="selectAnswer(answer)">
+                <img class="answer-image" [ngStyle]="{filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined }" src="{{answer?.image}}" alt="">
+                <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"><img src="{{ checkIfAnsweredCorrectly(answer) ? '/assets/images/check.png' : '/assets/images/cross-sign.png' }}" alt=""></span>
+            </div>
+        </div>
+    </div>
+</div>

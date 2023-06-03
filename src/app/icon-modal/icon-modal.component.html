@@ -1,0 +1,15 @@
+<div class="modal-backdrop">
+  <div class="modal-body">
+    <h1>Elija el icono de la barra de progreso</h1>
+    <div *ngFor="let icon of icons" class="select-icon-wrapper">
+      <span (click)="submit.emit(icon)">
+        <app-progress-bar [iconName]="icon" [progress]="70"></app-progress-bar>
+      </span>
+    </div>
+    <div class="modal-action">
+      <button class="modal-action-button" type="button" (click)="cancel.emit(true)">
+        <h1>cerrar</h1>
+      </button>
+    </div>
+  </div>
+</div>

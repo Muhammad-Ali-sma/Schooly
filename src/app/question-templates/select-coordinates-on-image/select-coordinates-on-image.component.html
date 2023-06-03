@@ -1,0 +1,9 @@
+<div class="question">
+    <div class="image">
+        <img src="{{ question.data?.image }}" alt="" [ngStyle]="{filter:question.data?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined }" [style.width]="getImageSize()">
+    </div>
+    <div class="coordinates-image">
+        <img src="{{ question.data?.coordinatesImage }}" alt="" [style.width]="question.data?.coordinatesImageWidth + 'px'" [style.height]="question.data?.coordinatesImageHeight + 'px'">
+        <div class="coordinate-target" *ngFor="let coordinate of question?.data?.coordinates" (click)="selectCoordinate(coordinate)" [ngClass]="{'coordinate-selected': coordinate?.selected}" [ngStyle]="{'left': coordinate?.x + 'px', 'top': coordinate?.y + 'px'}"></div>
+    </div>
+</div>

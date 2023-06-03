@@ -1,0 +1,37 @@
+<div class="question">
+  <div class="objects">
+    <div
+      class="object"
+      *ngFor="let object of question?.data?.objects?.outside"
+      [ngStyle]="{ top: object?.y + 'px', left: object?.x + 'px', opacity: object?.show ? 1 : 0 }"
+    >
+      <img src="{{ object?.image }}" alt=""  [ngStyle]="{filter:object?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}"/>
+    </div>
+  </div>
+  <div class="answers">
+    <div
+      class="answer"
+      *ngFor="let answer of question?.data?.answers"
+      [ngStyle]="{
+        width: answerImageSize + 'px',
+        height: answerImageSize + 'px'
+      }"
+      [style.border-color]="answer?.selected ? 'orange' : 'grey'"
+      (click)="selectAnswer(answer)"
+    >
+      <span class="answer-text" *ngIf="answer?.type === 'text'">{{
+        answer?.content
+      }}</span>
+      <img *ngIf="answer.type === 'image'" [ngStyle]="{filter:answer?.shadow === 1 ? 'saturate(0) contrast(0)' : undefined}" src="{{ answer?.content }}" alt="" />
+      <span class="answered-circle" [ngStyle]="setAnswerStyle(answer)"
+        ><img
+          src="{{
+            checkIfAnsweredCorrectly(answer)
+              ? '/assets/images/check.png'
+              : '/assets/images/cross-sign.png'
+          }}"
+          alt=""
+      /></span>
+    </div>
+  </div>
+</div>
